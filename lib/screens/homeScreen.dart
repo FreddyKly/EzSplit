@@ -40,14 +40,21 @@ class Home extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(items: const [
         BottomNavigationBarItem(
             icon: Icon(Icons.view_agenda), 
-            label: 'Overview'),
+            label: 'Overview',
+            ),
         BottomNavigationBarItem(
           icon: Icon(Icons.add), 
           label: ''),
         BottomNavigationBarItem(
             icon: Icon(Icons.list_alt_rounded), 
-            label: 'Expenses')
-      ]),
+            label: 'Expenses'),
+      ],
+      selectedItemColor: primary,
+      unselectedItemColor: highlight,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      backgroundColor: accent,
+      ),
       drawer: const Drawer(
         child: Icon(Icons.add),
       ),
