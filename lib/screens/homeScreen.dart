@@ -29,31 +29,39 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          Icon(Icons.leaderboard)
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
+          backgroundColor: primary,
+          foregroundColor: bgColor,
           child: Icon(Icons.add),
           onPressed: () {
             print('pressed');
           }),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(
-            icon: Icon(Icons.view_agenda), 
-            label: 'Overview',
-            ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add), 
-          label: ''),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt_rounded), 
-            label: 'Expenses'),
-      ],
-      selectedItemColor: primary,
-      unselectedItemColor: highlight,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      backgroundColor: accent,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        color: accent,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(icon: Icon(Icons.view_agenda), onPressed: () {}),
+              SizedBox(width: 40), // The dummy child
+              IconButton(icon: Icon(Icons.list_alt_rounded), onPressed: () {}),
+            ],
+          ),
+        // items: const [
+        //   BottomNavigationBarItem(
+        //     icon: Icon(Icons.view_agenda),
+        //     label: 'Overview',
+        //   ),
+        //   BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+        //   BottomNavigationBarItem(
+        //       icon: Icon(Icons.list_alt_rounded), label: 'Expenses'),
+        // ],
+        // selectedItemColor: primary,
+        // unselectedItemColor: highlight,
+        // backgroundColor: accent,
       ),
       drawer: const Drawer(
         child: Icon(Icons.add),
