@@ -1,4 +1,4 @@
-# ezsplit
+# Scan n' Split
 
 A new Flutter project.
 
