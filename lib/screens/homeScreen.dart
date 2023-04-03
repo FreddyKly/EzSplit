@@ -1,3 +1,4 @@
+import 'package:ezsplit/screens/NewExpenseScreen.dart';
 import 'package:ezsplit/utils/colors.dart';
 import 'package:ezsplit/widgets/appBarCustom.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,9 @@ class Home extends StatelessWidget {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(icon: Icon(Icons.view_agenda), onPressed: () {}),
+              IconButton(icon: Icon(Icons.view_agenda), onPressed: () {
+                navigateToNewExpensePage(context);
+                }),
               SizedBox(width: 40), // The dummy child
               IconButton(icon: Icon(Icons.list_alt_rounded), onPressed: () {}),
             ],
@@ -67,5 +70,12 @@ class Home extends StatelessWidget {
         child: Icon(Icons.add),
       ),
     );
+  }
+
+  void navigateToNewExpensePage(BuildContext context) {
+    final route = MaterialPageRoute(
+      builder: (context) => const NewExpensePage()
+    );
+    Navigator.push(context, route);
   }
 }
